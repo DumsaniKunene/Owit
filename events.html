@@ -1,0 +1,130 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OWIT – Organization of Women in International Trade</title>
+  <meta name="description" content="The Organization of Women in International Trade (OWIT): advancing women in global commerce through networking, mentorship, and education." />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+  <div class="container nav" role="navigation" aria-label="Primary">
+    <a href="index.html" class="brand">
+      <img src="logo.jpg" alt="OWIT Logo" class="logo" />
+    </a>
+
+    <!-- Hamburger menu toggle -->
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon"></label>
+
+    <nav>
+      <ul>
+        <li><a class="textLink" href="index.html">Home</a></li>
+        <li><a class="textLink" href="programs.html">Programs</a></li>
+        <li><a class="active" href="events.html">Events</a></li>
+        <li><a class="textLink" href="community.html">Join</a></li>
+        <li><a class="textLink" href="contact.html">Contact</a></li>
+        <li><a href="donate.html" class="btn btn-primary">Donate</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+ <main class="container">
+    <h1>Upcoming Events</h1>
+    <p>Join OWIT for upcoming events designed to connect, inspire, and empower women in international trade.</p>
+
+    <div class="event-layout">
+      <!-- Event 1 -->
+      <div class="card" id="event-2025-09-15">
+        <h2>International Trade Workshop</h2>
+        <p><strong>Date:</strong> September 15, 2025</p>
+        <p><strong>Location:</strong> Virtual (Zoom)</p>
+        <p>A practical workshop covering export compliance, logistics, and building global business partnerships.</p>
+      </div>
+
+      <!-- Calendar -->
+      <div class="calendar">
+        <h3>Event Dates</h3>
+        <ul>
+          <li><p>International Trade Workshop</p><p><a href="#event-2025-09-15">Sep 15, 2025</a></li></p>
+          <li><p>Women in Trade Policy Forum</p><p></p><a href="#event-2025-10-05">Oct 5, 2025</a></li></p>
+          <li><p>Global Networking Gala</p><p></p><a href="#event-2025-11-20">Nov 20, 2025</a></li></p>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Event 2 -->
+    <div class="card" id="event-2025-10-05">
+      <h2>Women in Trade Policy Forum</h2>
+      <p><strong>Date:</strong> October 5, 2025</p>
+      <p><strong>Location:</strong> Geneva, Switzerland</p>
+      <p>A forum bringing together policymakers and entrepreneurs to discuss inclusive trade policies worldwide.</p>
+    </div>
+
+    <!-- Event 3 -->
+    <div class="card" id="event-2025-11-20">
+      <h2>Global Networking Gala</h2>
+      <p><strong>Date:</strong> November 20, 2025</p>
+      <p><strong>Location:</strong> New York City</p>
+      <p>A gala evening with speakers, networking sessions, and recognition of women leaders in global trade.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container foot-grid">
+      <p style="margin-top:.6rem; color:#dfe6f6;">
+        A global, volunteer-led network advancing women in international business.
+      </p>
+      <div class="foot">
+        <h4>Explore</h4>
+        <p><a class="textLink" href="Home.html">About</a><br/>
+           <a class="textLink" href="programs.html">Programs</a><br/>
+           <a class="textLink" href="events.html">Events</a></p>
+      </div>
+      <div class="foot">
+        <h4>Get Involved</h4>
+        <p><a class="textLink" href="community.html">Membership</a><br/>
+           <a class="textLink" href="donate.html">Donate</a><br/>
+           <a class="textLink" href="contact.html">Contact</a></p>
+      </div>
+    </div>
+    <div class="container credit">
+      © <span id="year">2025</span> OWIT. Non‑profit organization.
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
+
+    <script>
+    // Update year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Smooth scroll for calendar links
+    document.querySelectorAll('.calendar a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href").substring(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          target.classList.add("highlight");
+          setTimeout(() => target.classList.remove("highlight"), 2000);
+        }
+      });
+    });
+  </script>
+
+  <style>
+    /* Highlight effect on focus */
+    .highlight {
+      outline: 2px solid var(--owit-orange, #E97736);
+      transition: outline 0.3s ease-in-out;
+    }

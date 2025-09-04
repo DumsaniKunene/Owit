@@ -23,10 +23,10 @@
 
     <nav>
       <ul>
-        <li><a class="active" href="index.html">Home</a></li>
+        <li><a class="textLink" href="index.html">Home</a></li>
         <li><a class="textLink" href="programs.html">Programs</a></li>
         <li><a class="textLink" href="events.html">Events</a></li>
-        <li><a class="textLink" href="community.html">Join</a></li>
+        <li><a class="active" href="community.html">Join</a></li>
         <li><a class="textLink" href="contact.html">Contact</a></li>
         <li><a href="donate.html" class="btn btn-primary">Donate</a></li>
       </ul>
@@ -34,27 +34,16 @@
   </div>
 </header>
 
-  <main id="main">
-    <section class="hero" aria-label="Hero">
-      <div class="container">
-        <div>
-          <span class="eyebrow">The Organization of Women in International Trade</span>
-          <h1>Advancing women in global commerce</h1>
-          <p class="lead">OWIT is a non-profit network that empowers, educates, and connects women in international business. We champion inclusive trade policies, career development, and cross-border collaboration.</p>
-          <div class="cta-group" role="group" aria-label="Primary calls to action">
-            <a class="btn btn-primary" href="community.html">Become a Member</a>
-            <a class="btn btn-outline" href="programs.html">Explore Programs</a>
-          </div>
-        </div>
-        <aside class="hero-card" aria-label="Spotlight">
-          <span class="tag" aria-hidden="true">New</span>
-          <h3>Mentorship Cohort 2025</h3>
-          <p>Pairing early-career professionals with seasoned leaders across trade, logistics, and policy. Build skills, confidence, and global networks.</p>
-          <div class="divider" aria-hidden="true"></div>
-          <p style="margin:0"><strong style="color:var(--owit-orange);">Applications close Oct 15</strong> · Virtual & in-person tracks</p>
-        </aside>
-      </div>
-    </section>
+  <main class="container">
+    <h2>Community features still under construction.</h2>
+    <p>If you'd like to be updated when the online community launzhesm please enter your email address below:</p>
+    <form class="contact-form" onsubmit="return validateForm()">
+    <div class="form-group">
+      <input type="email" id="email" name="email" placeholder=" " required>
+      <label for="email">Email Address</label>
+    </div>
+    <button type="submit">Submit</button>
+    </form>
   </main>
 
   <footer>
@@ -84,3 +73,16 @@
   </footer>
 </body>
 </html>
+
+<script>
+    function validateForm() {
+      const email = document.getElementById('email').value.trim();
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        alert('Please enter a valid email address.');
+        return false;
+      }
+
+      return true;
+    }
+  </script>
